@@ -16,3 +16,16 @@ $ git clone --bare git@github.com:boke0/dotfiles.git $HOME/.dotfiles
 $ git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout installed
 $ source ~/.zshrc
 ```
+
+## Uninstallation 
+
+```
+$ cfg checkout master
+```
+
+
+## Re-installation
+
+```
+$ cfg checkout installed 
+```
