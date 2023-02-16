@@ -7,6 +7,11 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+fpath=($HOME/.zsh/completion $fpath)
+autoload -U compinit
+
+compinit -u
+
 ## zinit plugins
 
 zinit ice depth=1
@@ -68,7 +73,7 @@ clear-panes() {
 
 dev() {
     if [ $# != 0 ]; then
-        cd "$HOME/Works/$1"
+        cd "$1"
     fi
     tmux split-window -h -p 24
     tmux split-window -v -p 75
@@ -83,7 +88,7 @@ dev() {
 
 deh() {
     if [ $# != 0 ]; then
-        cd "$HOME/Works/$1"
+        cd "$1"
     fi
     tmux split-window -v -p 30
     tmux split-window -h -p 66
