@@ -17,8 +17,12 @@ zinit ice as"command" from"gh-r" \
   atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 eval "$(starship init zsh)"
+
 zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
   atpull'%atclone' pick"direnv" src"zhook.zsh" for direnv/direnv
+
+zinit ice depth=1
+zinit light zsh-users/zsh-autosuggestions
 
 ## aliases
 
@@ -39,7 +43,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.deno/bin:/usr/local/go/bin:$HOME/.go/
 
 ## install anyenv
 
-if ! type anyenv; then
+if ! type anyenv > /dev/null; then
   git clone https://github.com/anyenv/anyenv ~/.anyenv
   ~/.anyenv/bin/anyenv install --init
 fi
