@@ -23,9 +23,6 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 eval "$(starship init zsh)"
 
-zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-  atpull'%atclone' pick"direnv" src"zhook.zsh" for direnv/direnv
-
 zinit ice depth=1
 zinit light zsh-users/zsh-autosuggestions
 
@@ -45,6 +42,13 @@ export CLOUDSDK_PYTHON=python2
 export EDITOR=nvim
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 export PATH="$PATH:$HOME/.local/bin:$HOME/.deno/bin:/usr/local/go/bin:$HOME/.go/bin:$HOME/.anyenv/bin:$HOME/.anyenv/versions/2.6.8/bin:$HOME/.anyenv/envs/nodenv/bin:$HOME/.cargo/bin:/usr/lib/jvm/default/bin:$HOME/.google-cloud-sdk/bin:$HOME/.gsutil/gsutil/:$GOBIN"
+
+## install direnv
+
+if ! type direnv > /dev/null; then
+    curl -sfL https://direnv.net/install.sh | bash
+fi
+eval "$(direnv hook zsh)"
 
 ## install anyenv
 
