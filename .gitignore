@@ -1,3 +1,5 @@
+*
+!.gitignore
 .gitconfig*
 .git-credentials
 .config
