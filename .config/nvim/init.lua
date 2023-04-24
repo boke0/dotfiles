@@ -100,6 +100,7 @@ require('packer').startup(function()
             vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<CR>', opt_n)
             vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>', opt_n)
             vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opt_n)
+            vim.api.nvim_set_keymap('n', '<Leader>fd', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>', opt_n)
         end
     }
     use {
@@ -173,6 +174,12 @@ require('packer').startup(function()
             vim.api.nvim_set_keymap('n', '<Leader>dgt', '<cmd>lua require("dap-go").debug_test()<CR>', opt_n)
         end
     }
+    use {
+        "OmniSharp/omnisharp-vim",
+        config = function() 
+            vim.g['OmniSharp_server_use_mono '] = true
+        end
+    }
     use "mfussenegger/nvim-dap-ui"
     use "leoluz/nvim-dap-go"
     use "theHamsta/nvim-dap-virtual-text"
@@ -194,6 +201,7 @@ require('packer').startup(function()
         end
     }
     use "pantharshit00/vim-prisma"
+    use "github/copilot.vim"
 
     vim.cmd("colorscheme photon")
 end)
