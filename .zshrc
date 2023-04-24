@@ -103,3 +103,7 @@ deh() {
     
     tmux rename-window "$1"
 }
+
+if [ -f ~/.zprofile ]; then
+    source ~/.zprofile
+fi
