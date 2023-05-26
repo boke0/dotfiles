@@ -202,6 +202,7 @@ require('packer').startup(function()
     }
     use "pantharshit00/vim-prisma"
     use "github/copilot.vim"
+    use "f-person/git-blame.nvim"
 
     vim.cmd("colorscheme photon")
 end)
