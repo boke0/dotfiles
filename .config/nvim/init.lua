@@ -38,7 +38,7 @@ vim.api.nvim_set_keymap('n', '<Leader>N', '<cmd>lua vim.lsp.buf.references<CR>',
 vim.api.nvim_set_keymap('n', '<Leader>s', '<cmd>lua vim.diagnostic.open_float()<CR>', opt_ns)
 vim.api.nvim_set_keymap('n', '[s', '<cmd>lua vim.lsp.buf.diagnostic.goto_prev()<CR>', opt_ns)
 vim.api.nvim_set_keymap('n', ']s', '<cmd>lua vim.lsp.buf.diagnostic.goto_next()<CR>', opt_ns)
-vim.api.nvim_set_keymap('n', '<Leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt_ns)
+vim.api.nvim_set_keymap('n', '<Leader>F', '<cmd>lua vim.lsp.buf.format()<CR>', opt_ns)
 
 
 vim.api.nvim_set_keymap('n', 'sh', '<C-w>h', opt_ns)
@@ -56,35 +56,16 @@ vim.api.nvim_set_keymap('n', '<Leader>r', '<cmd>lua vim.lsp.buf.references()<CR>
 vim.api.nvim_set_keymap('n', '<Leader>w', ':w<CR>', opt_n)
 vim.api.nvim_set_keymap('n', '<Leader>q', ':q<CR>', opt_n)
 vim.api.nvim_set_keymap('n', '<Leader>n', ':nohlsearch<CR><ESC>', opt_n)
-vim.api.nvim_set_keymap('n', '<Leader>f', ':VimFiler<CR>', opt_n)
-
-vim.g.vimfiler_safe_mode_by_default=0
-vim.g['eskk#directory'] = "~/.jisho"
-vim.g['eskk#dictionary'] = { path = '~/.jisho/.eskk-jisyo', sorted = 1, encoding = 'utf-8' }
-vim.g['eskk#large_dictionary'] = { path = "~/.jisho/SKK-JISYO.L", sorted = 1, encoding = 'euc-jp' }
-vim.g['eskk#enable_completion'] = 1
-vim.g['eskk#keep_state'] = 0
-vim.g['eskk#egg_like_newline'] = 1
+vim.api.nvim_set_keymap('n', '<Leader>f', ':Fern . -reveal=%<CR>', opt_n)
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'cocopon/iceberg.vim'
-    use 'Shougo/unite.vim'
-    use 'Shougo/vimfiler.vim'
     use 'sheerun/vim-polyglot'
     use 'ryanoasis/vim-devicons'
     use 'vim-airline/vim-airline'
     use 'jiangmiao/auto-pairs'
     use 'terryma/vim-multiple-cursors'
-    use {
-        'neovim/nvim-lspconfig',
-        config=function()
-            require'lspconfig'.tsserver.setup{
-                cmd = { "typescript-language-server", "--stdio" }
-            }
-        end
-    }
-    use 'tyru/eskk.vim'
     use 'nvim-lua/plenary.nvim'
     use 'vim-denops/denops.vim'
     use {
@@ -104,20 +85,26 @@ require('packer').startup(function()
         end
     }
     use {
-        'williamboman/nvim-lsp-installer',
+        'williamboman/mason.nvim',
         config = function()
-            local lsp_installer = require("nvim-lsp-installer")
-            lsp_installer.on_server_ready(function(server)
-                local opts = {}
-                opts.on_attach = on_attach
-                opts.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-                server:setup(opts)
-                vim.cmd [[ do User LspAttachBuffers ]]
-            end)
+            require("mason").setup()
         end
     }
-    use 'axvr/photon.vim'
+    use {
+        'williamboman/mason-lspconfig.nvim',
+        config = function()
+            require("mason-lspconfig").setup()
+        end
+    }
+    use {
+        'neovim/nvim-lspconfig',
+        config=function()
+            require'lspconfig'.tsserver.setup{
+                cmd = { "typescript-language-server", "--stdio" }
+            }
+        end
+    }
+    use 'dracula/vim'
     use {
         "hrsh7th/nvim-cmp",
         config = function()
@@ -174,19 +161,13 @@ require('packer').startup(function()
             vim.api.nvim_set_keymap('n', '<Leader>dgt', '<cmd>lua require("dap-go").debug_test()<CR>', opt_n)
         end
     }
-    use {
-        "OmniSharp/omnisharp-vim",
-        config = function() 
-            vim.g['OmniSharp_server_use_mono '] = true
-        end
-    }
     use "mfussenegger/nvim-dap-ui"
     use "leoluz/nvim-dap-go"
     use "theHamsta/nvim-dap-virtual-text"
     use {
         "ferrine/md-img-paste.vim",
         config = function()
-            vim.g['mdip_imgdir_absolute'] = 'img'
+            vim.g['mdip_imgdir_absolute'] = 'public/assets/'
             vim.api.nvim_set_keymap('n', '<Leader>p', ':call mdip#MarkdownClipboardImage()<CR>', opt_n)
         end
     }
@@ -202,8 +183,9 @@ require('packer').startup(function()
     }
     use "pantharshit00/vim-prisma"
     use "github/copilot.vim"
+    use "lambdalisue/fern.vim"
 
-    vim.cmd("colorscheme photon")
+    vim.cmd("colorscheme dracula")
 end)
 
 vim.opt.completeopt = "menu,menuone,noselect"

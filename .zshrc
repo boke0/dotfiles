@@ -63,6 +63,12 @@ if type nodenv > /dev/null; then
     export PATH="$PATH:$(npm bin -g)"
 fi
 
+## kerl
+
+## kiex
+
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 ## install tpm(tmux)
 
 [ ! -d $HOME/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
