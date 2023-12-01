@@ -184,6 +184,7 @@ require('packer').startup(function()
     use "pantharshit00/vim-prisma"
     use "github/copilot.vim"
     use "lambdalisue/fern.vim"
+    use "f-person/git-blame.nvim"
 
     vim.cmd("colorscheme dracula")
 end)

@@ -25,6 +25,9 @@ eval "$(starship init zsh)"
 
 zinit ice depth=1
 zinit light zsh-users/zsh-autosuggestions
+zinit light asdf-vm/asdf
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
 
 ## aliases
 
@@ -41,7 +44,7 @@ export GOBIN="$GOPATH/bin"
 export CLOUDSDK_PYTHON=python2
 export EDITOR=nvim
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
-export PATH="$PATH:$HOME/.local/bin:$HOME/.deno/bin:/usr/local/go/bin:$HOME/.go/bin:$HOME/.anyenv/bin:$HOME/.anyenv/versions/2.6.8/bin:$HOME/.anyenv/envs/nodenv/bin:$HOME/.cargo/bin:/usr/lib/jvm/default/bin:$HOME/.google-cloud-sdk/bin:$HOME/.gsutil/gsutil/:$GOBIN"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.deno/bin:/usr/local/go/bin:$HOME/.go/bin:$HOME/.cargo/bin:/usr/lib/jvm/default/bin:$HOME/.google-cloud-sdk/bin:$HOME/.gsutil/gsutil/:$GOBIN"
 
 ## install direnv
 
@@ -49,25 +52,6 @@ if ! type direnv > /dev/null; then
     curl -sfL https://direnv.net/install.sh | bash
 fi
 eval "$(direnv hook zsh)"
-
-## install anyenv
-
-if ! type anyenv > /dev/null; then
-  git clone https://github.com/anyenv/anyenv ~/.anyenv
-  ~/.anyenv/bin/anyenv install --init
-fi
-export ANYENV_ROOT="$HOME/.anyenv"
-eval "$(anyenv init -)"
-
-if type nodenv > /dev/null; then
-    export PATH="$PATH:$(npm bin -g)"
-fi
-
-## kerl
-
-## kiex
-
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 ## install tpm(tmux)
 
