@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/boke0/.cache/nvim/packer_hererocks/2.1.1699392533/share/lua/5.1/?.lua;/home/boke0/.cache/nvim/packer_hererocks/2.1.1699392533/share/lua/5.1/?/init.lua;/home/boke0/.cache/nvim/packer_hererocks/2.1.1699392533/lib/luarocks/rocks-5.1/?.lua;/home/boke0/.cache/nvim/packer_hererocks/2.1.1699392533/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/boke0/.cache/nvim/packer_hererocks/2.1.1699392533/lib/lua/5.1/?.so"
+local package_path_str = "/Users/taigen.takeshita/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?.lua;/Users/taigen.takeshita/.cache/nvim/packer_hererocks/2.1.1703358377/share/lua/5.1/?/init.lua;/Users/taigen.takeshita/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?.lua;/Users/taigen.takeshita/.cache/nvim/packer_hererocks/2.1.1703358377/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/taigen.takeshita/.cache/nvim/packer_hererocks/2.1.1703358377/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,232 +76,217 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-pairs"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["copilot.vim"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
   ["denops-popup-preview.vim"] = {
     config = { "\27LJ\2\n?\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0 call popup_preview#enable()\bcmd\bvim\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/denops-popup-preview.vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/denops-popup-preview.vim",
     url = "https://github.com/matsui54/denops-popup-preview.vim"
   },
   ["denops.vim"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/denops.vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/denops.vim",
     url = "https://github.com/vim-denops/denops.vim"
   },
   ["diaglist.nvim"] = {
-    config = { "\27LJ\2\n’\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\b\0'\4\t\0006\5\n\0B\0\5\1K\0\1\0\nopt_n<<cmd>lua require(\"diaglist\").open_all_diagnostics()<CR>\15<Leader>dw\6n\20nvim_set_keymap\bapi\bvim\1\0\2\16debounce_ms\3ñ\1\ndebug\1\tinit\rdiaglist\frequire\0" },
+    config = { "\27LJ\2\n’\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\b\0'\4\t\0006\5\n\0B\0\5\1K\0\1\0\nopt_n<<cmd>lua require(\"diaglist\").open_all_diagnostics()<CR>\15<Leader>dw\6n\20nvim_set_keymap\bapi\bvim\1\0\2\ndebug\1\16debounce_ms\3ñ\1\tinit\rdiaglist\frequire\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/diaglist.nvim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/diaglist.nvim",
     url = "https://github.com/onsails/diaglist.nvim"
-  },
-  ["eskk.vim"] = {
-    loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/eskk.vim",
-    url = "https://github.com/tyru/eskk.vim"
   },
   ["fern.vim"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/fern.vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/fern.vim",
     url = "https://github.com/lambdalisue/fern.vim"
+  },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
   },
   ["iceberg.vim"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/iceberg.vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/iceberg.vim",
     url = "https://github.com/cocopon/iceberg.vim"
   },
   ["mason-lspconfig.nvim"] = {
     config = { "\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20mason-lspconfig\frequire\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["md-img-paste.vim"] = {
     config = { "\27LJ\2\n≥\1\0\0\6\0\n\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0006\5\t\0B\0\5\1K\0\1\0\nopt_n,:call mdip#MarkdownClipboardImage()<CR>\14<Leader>p\6n\20nvim_set_keymap\bapi\19public/assets/\25mdip_imgdir_absolute\6g\bvim\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/md-img-paste.vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/md-img-paste.vim",
     url = "https://github.com/ferrine/md-img-paste.vim"
   },
   ["nvim-cmp"] = {
     config = { "\27LJ\2\n;\0\1\4\0\4\0\0066\1\0\0009\1\1\0019\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\20vsnip#anonymous\afn\bvim¬\5\1\0\t\0+\0[6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\6\0005\4\4\0003\5\3\0=\5\5\4=\4\a\0035\4\n\0009\5\b\0009\5\t\5B\5\1\2=\5\v\0049\5\b\0009\5\f\5B\5\1\2=\5\r\0049\5\b\0009\5\14\0055\a\17\0009\b\15\0009\b\16\b=\b\18\aB\5\2\2=\5\19\0049\5\b\0009\5\20\0055\a\21\0009\b\15\0009\b\16\b=\b\18\aB\5\2\2=\5\22\0049\5\b\0009\5\14\0055\a\24\0009\b\15\0009\b\23\b=\b\18\aB\5\2\2=\5\25\0049\5\b\0009\5\20\0055\a\26\0009\b\15\0009\b\23\b=\b\18\aB\5\2\2=\5\27\0049\5\b\0009\5\28\5)\a¸ˇB\5\2\2=\5\29\0049\5\b\0009\5\28\5)\a\4\0B\5\2\2=\5\30\0049\5\b\0009\5\t\5B\5\1\2=\5\31\0049\5\b\0009\5\f\5B\5\1\2=\5 \0049\5\b\0009\5!\0055\a$\0009\b\"\0009\b#\b=\b\18\aB\5\2\2=\5%\4=\4\b\0039\4&\0009\4'\0044\6\3\0005\a(\0>\a\1\0065\a)\0>\a\2\0064\a\3\0005\b*\0>\b\1\aB\4\3\2=\4'\3B\1\2\1K\0\1\0\1\0\1\tname\vbuffer\1\0\1\tname\nvsnip\1\0\1\tname\rnvim_lsp\fsources\vconfig\t<CR>\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\n<C-e>\14<C-Space>\n<C-f>\n<C-b>\16scroll_docs\t<Up>\1\0\0\v<Down>\1\0\0\vSelect\n<C-p>\1\0\0\21select_prev_item\n<C-n>\rbehavior\1\0\0\vInsert\19SelectBehavior\21select_next_item\n<C-c>\nclose\n<C-y>\1\0\0\rcomplete\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\nsetup\bcmp\frequire\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
     config = { "\27LJ\2\nÅ\3\0\0\6\0\r\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\v\0'\4\f\0006\5\6\0B\0\5\1K\0\1\0000<cmd>lua require(\"dap-go\").debug_test()<CR>\16<Leader>dgt+<cmd>lua require(\"dapui\").toggle()<CR>\15<Leader>dd+<cmd>lua require(\"dap\").continue()<CR>\15<Leader>dc\nopt_n4<cmd>lua require(\"dap\").toggle_breakpoint()<CR>\14<Leader>b\6n\20nvim_set_keymap\bapi\bvim\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-go"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
     url = "https://github.com/leoluz/nvim-dap-go"
   },
   ["nvim-dap-ui"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/mfussenegger/nvim-dap-ui"
   },
   ["nvim-dap-virtual-text"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\n~\0\0\4\0\a\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0005\2\5\0005\3\4\0=\3\6\2B\0\2\1K\0\1\0\bcmd\1\0\0\1\3\0\0\31typescript-language-server\f--stdio\nsetup\rtsserver\14lspconfig\frequire\0" },
+    config = { "\27LJ\2\n\1\0\0\4\0\n\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0005\2\5\0005\3\4\0=\3\6\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\a\0009\0\3\0005\2\t\0005\3\b\0=\3\6\2B\0\2\1K\0\1\0\1\0\0\1\2\0\0B/Users/taigen.takeshita/.local/share/nvim/mason/bin/elixir-ls\relixirls\bcmd\1\0\0\1\3\0\0\31typescript-language-server\f--stdio\nsetup\rtsserver\14lspconfig\frequire\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["omnisharp-vim"] = {
-    config = { "\27LJ\2\n<\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\31OmniSharp_server_use_mono \6g\bvim\0" },
-    loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/omnisharp-vim",
-    url = "https://github.com/OmniSharp/omnisharp-vim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   tcomment_vim = {
     config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/tcomment_vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/tcomment_vim",
     url = "https://github.com/tomtom/tcomment_vim"
   },
   ["telescope.nvim"] = {
     config = { "\27LJ\2\nï\4\0\0\6\0\15\0)6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\v\0'\4\f\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0'\4\14\0006\5\6\0B\0\5\1K\0\1\0@<cmd>lua require(\"telescope.builtin\").lsp_definitions()<CR>\15<Leader>fd:<cmd>lua require(\"telescope.builtin\").help_tags()<CR>\15<Leader>fh8<cmd>lua require(\"telescope.builtin\").buffers()<CR>\15<Leader>fb:<cmd>lua require(\"telescope.builtin\").live_grep()<CR>\15<Leader>fg\nopt_n;<cmd>lua require(\"telescope.builtin\").find_files()<CR>\15<Leader>ff\6n\20nvim_set_keymap\bapi\bvim\0" },
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["unite.vim"] = {
-    loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/unite.vim",
-    url = "https://github.com/Shougo/unite.vim"
   },
   vim = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim",
     url = "https://github.com/dracula/vim"
   },
   ["vim-airline"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim-airline",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-glsl"] = {
+    loaded = true,
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-glsl",
+    url = "https://github.com/tikhomirov/vim-glsl"
   },
   ["vim-multiple-cursors"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
     url = "https://github.com/terryma/vim-multiple-cursors"
   },
   ["vim-polyglot"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
   },
   ["vim-prisma"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim-prisma",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-prisma",
     url = "https://github.com/pantharshit00/vim-prisma"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    path = "/Users/taigen.takeshita/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vimfiler.vim"] = {
-    loaded = true,
-    path = "/home/boke0/.local/share/nvim/site/pack/packer/start/vimfiler.vim",
-    url = "https://github.com/Shougo/vimfiler.vim"
   }
 }
 
 time([[Defining packer_plugins]], false)
 -- Config for: diaglist.nvim
 time([[Config for diaglist.nvim]], true)
-try_loadstring("\27LJ\2\n’\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\b\0'\4\t\0006\5\n\0B\0\5\1K\0\1\0\nopt_n<<cmd>lua require(\"diaglist\").open_all_diagnostics()<CR>\15<Leader>dw\6n\20nvim_set_keymap\bapi\bvim\1\0\2\16debounce_ms\3ñ\1\ndebug\1\tinit\rdiaglist\frequire\0", "config", "diaglist.nvim")
+try_loadstring("\27LJ\2\n’\1\0\0\6\0\v\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0009\0\6\0'\2\a\0'\3\b\0'\4\t\0006\5\n\0B\0\5\1K\0\1\0\nopt_n<<cmd>lua require(\"diaglist\").open_all_diagnostics()<CR>\15<Leader>dw\6n\20nvim_set_keymap\bapi\bvim\1\0\2\ndebug\1\16debounce_ms\3ñ\1\tinit\rdiaglist\frequire\0", "config", "diaglist.nvim")
 time([[Config for diaglist.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n;\0\1\4\0\4\0\0066\1\0\0009\1\1\0019\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\20vsnip#anonymous\afn\bvim¬\5\1\0\t\0+\0[6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\6\0005\4\4\0003\5\3\0=\5\5\4=\4\a\0035\4\n\0009\5\b\0009\5\t\5B\5\1\2=\5\v\0049\5\b\0009\5\f\5B\5\1\2=\5\r\0049\5\b\0009\5\14\0055\a\17\0009\b\15\0009\b\16\b=\b\18\aB\5\2\2=\5\19\0049\5\b\0009\5\20\0055\a\21\0009\b\15\0009\b\16\b=\b\18\aB\5\2\2=\5\22\0049\5\b\0009\5\14\0055\a\24\0009\b\15\0009\b\23\b=\b\18\aB\5\2\2=\5\25\0049\5\b\0009\5\20\0055\a\26\0009\b\15\0009\b\23\b=\b\18\aB\5\2\2=\5\27\0049\5\b\0009\5\28\5)\a¸ˇB\5\2\2=\5\29\0049\5\b\0009\5\28\5)\a\4\0B\5\2\2=\5\30\0049\5\b\0009\5\t\5B\5\1\2=\5\31\0049\5\b\0009\5\f\5B\5\1\2=\5 \0049\5\b\0009\5!\0055\a$\0009\b\"\0009\b#\b=\b\18\aB\5\2\2=\5%\4=\4\b\0039\4&\0009\4'\0044\6\3\0005\a(\0>\a\1\0065\a)\0>\a\2\0064\a\3\0005\b*\0>\b\1\aB\4\3\2=\4'\3B\1\2\1K\0\1\0\1\0\1\tname\vbuffer\1\0\1\tname\nvsnip\1\0\1\tname\rnvim_lsp\fsources\vconfig\t<CR>\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\n<C-e>\14<C-Space>\n<C-f>\n<C-b>\16scroll_docs\t<Up>\1\0\0\v<Down>\1\0\0\vSelect\n<C-p>\1\0\0\21select_prev_item\n<C-n>\rbehavior\1\0\0\vInsert\19SelectBehavior\21select_next_item\n<C-c>\nclose\n<C-y>\1\0\0\rcomplete\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: tcomment_vim
-time([[Config for tcomment_vim]], true)
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "tcomment_vim")
-time([[Config for tcomment_vim]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-try_loadstring("\27LJ\2\nÅ\3\0\0\6\0\r\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\v\0'\4\f\0006\5\6\0B\0\5\1K\0\1\0000<cmd>lua require(\"dap-go\").debug_test()<CR>\16<Leader>dgt+<cmd>lua require(\"dapui\").toggle()<CR>\15<Leader>dd+<cmd>lua require(\"dap\").continue()<CR>\15<Leader>dc\nopt_n4<cmd>lua require(\"dap\").toggle_breakpoint()<CR>\14<Leader>b\6n\20nvim_set_keymap\bapi\bvim\0", "config", "nvim-dap")
-time([[Config for nvim-dap]], false)
 -- Config for: mason.nvim
 time([[Config for mason.nvim]], true)
 try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0", "config", "mason.nvim")
 time([[Config for mason.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\nï\4\0\0\6\0\15\0)6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\v\0'\4\f\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0'\4\14\0006\5\6\0B\0\5\1K\0\1\0@<cmd>lua require(\"telescope.builtin\").lsp_definitions()<CR>\15<Leader>fd:<cmd>lua require(\"telescope.builtin\").help_tags()<CR>\15<Leader>fh8<cmd>lua require(\"telescope.builtin\").buffers()<CR>\15<Leader>fb:<cmd>lua require(\"telescope.builtin\").live_grep()<CR>\15<Leader>fg\nopt_n;<cmd>lua require(\"telescope.builtin\").find_files()<CR>\15<Leader>ff\6n\20nvim_set_keymap\bapi\bvim\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: denops-popup-preview.vim
-time([[Config for denops-popup-preview.vim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0 call popup_preview#enable()\bcmd\bvim\0", "config", "denops-popup-preview.vim")
-time([[Config for denops-popup-preview.vim]], false)
--- Config for: mason-lspconfig.nvim
-time([[Config for mason-lspconfig.nvim]], true)
-try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20mason-lspconfig\frequire\0", "config", "mason-lspconfig.nvim")
-time([[Config for mason-lspconfig.nvim]], false)
--- Config for: omnisharp-vim
-time([[Config for omnisharp-vim]], true)
-try_loadstring("\27LJ\2\n<\0\0\2\0\3\0\0056\0\0\0009\0\1\0+\1\2\0=\1\2\0K\0\1\0\31OmniSharp_server_use_mono \6g\bvim\0", "config", "omnisharp-vim")
-time([[Config for omnisharp-vim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n~\0\0\4\0\a\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0005\2\5\0005\3\4\0=\3\6\2B\0\2\1K\0\1\0\bcmd\1\0\0\1\3\0\0\31typescript-language-server\f--stdio\nsetup\rtsserver\14lspconfig\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
 -- Config for: md-img-paste.vim
 time([[Config for md-img-paste.vim]], true)
 try_loadstring("\27LJ\2\n≥\1\0\0\6\0\n\0\r6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0006\5\t\0B\0\5\1K\0\1\0\nopt_n,:call mdip#MarkdownClipboardImage()<CR>\14<Leader>p\6n\20nvim_set_keymap\bapi\19public/assets/\25mdip_imgdir_absolute\6g\bvim\0", "config", "md-img-paste.vim")
 time([[Config for md-img-paste.vim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\nï\4\0\0\6\0\15\0)6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\v\0'\4\f\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0'\4\14\0006\5\6\0B\0\5\1K\0\1\0@<cmd>lua require(\"telescope.builtin\").lsp_definitions()<CR>\15<Leader>fd:<cmd>lua require(\"telescope.builtin\").help_tags()<CR>\15<Leader>fh8<cmd>lua require(\"telescope.builtin\").buffers()<CR>\15<Leader>fb:<cmd>lua require(\"telescope.builtin\").live_grep()<CR>\15<Leader>fg\nopt_n;<cmd>lua require(\"telescope.builtin\").find_files()<CR>\15<Leader>ff\6n\20nvim_set_keymap\bapi\bvim\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n;\0\1\4\0\4\0\0066\1\0\0009\1\1\0019\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\20vsnip#anonymous\afn\bvim¬\5\1\0\t\0+\0[6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\6\0005\4\4\0003\5\3\0=\5\5\4=\4\a\0035\4\n\0009\5\b\0009\5\t\5B\5\1\2=\5\v\0049\5\b\0009\5\f\5B\5\1\2=\5\r\0049\5\b\0009\5\14\0055\a\17\0009\b\15\0009\b\16\b=\b\18\aB\5\2\2=\5\19\0049\5\b\0009\5\20\0055\a\21\0009\b\15\0009\b\16\b=\b\18\aB\5\2\2=\5\22\0049\5\b\0009\5\14\0055\a\24\0009\b\15\0009\b\23\b=\b\18\aB\5\2\2=\5\25\0049\5\b\0009\5\20\0055\a\26\0009\b\15\0009\b\23\b=\b\18\aB\5\2\2=\5\27\0049\5\b\0009\5\28\5)\a¸ˇB\5\2\2=\5\29\0049\5\b\0009\5\28\5)\a\4\0B\5\2\2=\5\30\0049\5\b\0009\5\t\5B\5\1\2=\5\31\0049\5\b\0009\5\f\5B\5\1\2=\5 \0049\5\b\0009\5!\0055\a$\0009\b\"\0009\b#\b=\b\18\aB\5\2\2=\5%\4=\4\b\0039\4&\0009\4'\0044\6\3\0005\a(\0>\a\1\0065\a)\0>\a\2\0064\a\3\0005\b*\0>\b\1\aB\4\3\2=\4'\3B\1\2\1K\0\1\0\1\0\1\tname\vbuffer\1\0\1\tname\nvsnip\1\0\1\tname\rnvim_lsp\fsources\vconfig\t<CR>\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\n<C-e>\14<C-Space>\n<C-f>\n<C-b>\16scroll_docs\t<Up>\1\0\0\v<Down>\1\0\0\vSelect\n<C-p>\1\0\0\21select_prev_item\n<C-n>\rbehavior\1\0\0\vInsert\19SelectBehavior\21select_next_item\n<C-c>\nclose\n<C-y>\1\0\0\rcomplete\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n\1\0\0\4\0\n\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0005\2\5\0005\3\4\0=\3\6\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\a\0009\0\3\0005\2\t\0005\3\b\0=\3\6\2B\0\2\1K\0\1\0\1\0\0\1\2\0\0B/Users/taigen.takeshita/.local/share/nvim/mason/bin/elixir-ls\relixirls\bcmd\1\0\0\1\3\0\0\31typescript-language-server\f--stdio\nsetup\rtsserver\14lspconfig\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: denops-popup-preview.vim
+time([[Config for denops-popup-preview.vim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0 call popup_preview#enable()\bcmd\bvim\0", "config", "denops-popup-preview.vim")
+time([[Config for denops-popup-preview.vim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\nÅ\3\0\0\6\0\r\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\t\0'\4\n\0006\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\v\0'\4\f\0006\5\6\0B\0\5\1K\0\1\0000<cmd>lua require(\"dap-go\").debug_test()<CR>\16<Leader>dgt+<cmd>lua require(\"dapui\").toggle()<CR>\15<Leader>dd+<cmd>lua require(\"dap\").continue()<CR>\15<Leader>dc\nopt_n4<cmd>lua require(\"dap\").toggle_breakpoint()<CR>\14<Leader>b\6n\20nvim_set_keymap\bapi\bvim\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
+-- Config for: tcomment_vim
+time([[Config for tcomment_vim]], true)
+try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "tcomment_vim")
+time([[Config for tcomment_vim]], false)
+-- Config for: mason-lspconfig.nvim
+time([[Config for mason-lspconfig.nvim]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20mason-lspconfig\frequire\0", "config", "mason-lspconfig.nvim")
+time([[Config for mason-lspconfig.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

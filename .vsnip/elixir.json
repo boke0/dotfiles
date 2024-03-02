@@ -1,0 +1,74 @@
+{
+    "defmodule": {
+        "prefix": "defmodule",
+        "body": [
+            "defmodule $1 do",
+            "    $0",
+            "end"
+        ]
+    },
+    "def": {
+        "prefix": "def",
+        "body": [
+            "def $1 do",
+            "    $0",
+            "end"
+        ]
+    },
+    "defp": {
+        "prefix": "defp",
+        "body": [
+            "defp $1 do",
+            "    $0",
+            "end"
+        ]
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if $1 do",
+            "    $0",
+            "end"
+        ]
+    },
+    "case": {
+        "prefix": "case",
+        "body": [
+            "case $1 do",
+            "    $0",
+            "end"
+        ]
+    },
+    "cond": {
+        "prefix": "cond",
+        "body": [
+            "cond do",
+            "    $0",
+            "end"
+        ]
+    },
+    "@moduledoc": {
+        "prefix": "@mod",
+        "body": [
+            "@moduledoc \"\"\"",
+            "$0",
+            "\"\"\""
+        ]
+    },
+    "@doc": {
+        "prefix": "@doc",
+        "body": [
+            "@doc \"\"\"",
+            "$0",
+            "\"\"\""
+        ]
+    },
+    "function": {
+        "prefix": "fn",
+        "body": [
+            "fn $1 ->",
+            "    $0",
+            "end"
+        ]
+    }
+}

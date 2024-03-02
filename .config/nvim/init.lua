@@ -11,6 +11,7 @@ vim.o.showmatch=true
 vim.o.laststatus=2
 vim.o.wildmode="list:longest"
 vim.o.wrap=false
+vim.o.breakindent=true
 
 
 vim.o.listchars="tab:>-"
@@ -102,6 +103,9 @@ require('packer').startup(function()
             require'lspconfig'.tsserver.setup{
                 cmd = { "typescript-language-server", "--stdio" }
             }
+            require'lspconfig'.elixirls.setup{
+                cmd = { "/Users/taigen.takeshita/.local/share/nvim/mason/bin/elixir-ls" }
+            }
         end
     }
     use 'dracula/vim'
@@ -185,6 +189,7 @@ require('packer').startup(function()
     use "github/copilot.vim"
     use "lambdalisue/fern.vim"
     use "f-person/git-blame.nvim"
+    use "tikhomirov/vim-glsl"
 
     vim.cmd("colorscheme dracula")
 end)
