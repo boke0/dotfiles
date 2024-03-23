@@ -67,8 +67,8 @@ clear-panes() {
 
 dev() {
     if [ $# != 0 ]; then
-        cd "$1g
-g   fi
+        cd "$1"
+   fi
     tmux split-window -h -l 24%
     tmux split-window -v -l 75%
     tmux split-window -v -l 66%
