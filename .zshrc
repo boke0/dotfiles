@@ -67,13 +67,13 @@ clear-panes() {
 
 dev() {
     if [ $# != 0 ]; then
-        cd "$1"
-    fi
-    tmux split-window -h -p 24
-    tmux split-window -v -p 75
-    tmux split-window -v -p 66
-    tmux split-window -v -p 50
-    #tmux split-window -h -p 50
+        cd "$1g
+g   fi
+    tmux split-window -h -l 24%
+    tmux split-window -v -l 75%
+    tmux split-window -v -l 66%
+    tmux split-window -v -l 50%
+    #tmux split-window -h -l 50%
     tmux select-pane -L
     clear-panes
     
@@ -84,10 +84,10 @@ deh() {
     if [ $# != 0 ]; then
         cd "$1"
     fi
-    tmux split-window -v -p 30
-    tmux split-window -h -p 66
-    tmux split-window -h -p 50
-    #tmux split-window -h -p 50
+    tmux split-window -v -l 30%
+    tmux split-window -h -l 66%
+    tmux split-window -h -l 50%
+    #tmux split-window -h -l 50%
     tmux select-pane -L
     clear-panes
     
