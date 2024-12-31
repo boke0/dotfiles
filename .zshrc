@@ -31,8 +31,8 @@ autoload -Uz compinit && compinit
 
 ## aliases
 
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
+alias vim="vim"
 alias g="git"
 alias tmux="tmux -u"
 alias cfg="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
@@ -53,6 +53,11 @@ if ! type direnv > /dev/null; then
 fi
 eval "$(direnv hook zsh)"
 
+## install vim plug
+
+[ ! -f $HOME/.vim/autoload/plug.vim ] && curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
 ## install tpm(tmux)
 
 [ ! -d $HOME/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
@@ -69,10 +74,10 @@ dev() {
     if [ $# != 0 ]; then
         cd "$1"
     fi
-    tmux split-window -h -p 24
-    tmux split-window -v -p 75
-    tmux split-window -v -p 66
-    tmux split-window -v -p 50
+    tmux split-window -h -l 24%
+    tmux split-window -v -l 75%
+    tmux split-window -v -l 66%
+    tmux split-window -v -l 50%
     #tmux split-window -h -p 50
     tmux select-pane -L
     clear-panes
@@ -84,9 +89,9 @@ deh() {
     if [ $# != 0 ]; then
         cd "$1"
     fi
-    tmux split-window -v -p 30
-    tmux split-window -h -p 66
-    tmux split-window -h -p 50
+    tmux split-window -v -l 30%
+    tmux split-window -h -l 66%
+    tmux split-window -h -l 50%
     #tmux split-window -h -p 50
     tmux select-pane -L
     clear-panes
@@ -97,3 +102,10 @@ deh() {
 if [ -f ~/.zprofile ]; then
     source ~/.zprofile
 fi
+CLOUDSDK_PYTHON=python
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/boke0/google-cloud-sdk/path.zsh.inc' ]; then . '/home/boke0/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/boke0/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/boke0/google-cloud-sdk/completion.zsh.inc'; fi
