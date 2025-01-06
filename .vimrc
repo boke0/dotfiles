@@ -25,7 +25,7 @@ if !has('gui_running')
 	set t_Co=256
 endif
 
-if !has('mac')
+if has('mac')
 	set clipboard+=unnamed
 else
 	set clipboard^=unnamedplus
@@ -85,7 +85,8 @@ let g:which_key_map['d'] = {
 	\ 'name' : '+diagnosis',
 	\ 'D' : [':LspDeclaration', 'Go to declaration'],
 	\ 'd' : [':LspDefinition', 'Go to definition'],
-	\ 'r' : [':LspReferences', 'Go to references']
+	\ 'r' : [':LspReferences', 'Go to references'],
+	\ 'f' : [':LspDocumentFormat', 'Format entire document']
 	\ }
 
 let g:which_key_map['f'] = {
