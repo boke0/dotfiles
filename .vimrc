@@ -14,7 +14,6 @@ set tabstop=2
 set showmatch
 set number
 set title
-set clipboard^=unnamedplus
 set noswapfile
 set nobackup
 set noundofile
@@ -26,13 +25,14 @@ if !has('gui_running')
 	set t_Co=256
 endif
 
-if exists("$WT_PROFILE_ID") 
-	augroup Yank
-		au!
-		autocmd TextYankPost * :call system('win32yank.exe -i', @")
-	augroup END
-	noremap <silent> p :call setreg('"',system('win32yank.exe -o'))<CR>""p
-end
+if !has('mac')
+	set clipboard+=unnamed
+else
+	set clipboard^=unnamedplus
+endif
+
+filetype plugin on
+syntax on
 
 "nnoremap k h
 "nnoremap t j
@@ -70,6 +70,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'github/copilot.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -104,7 +105,6 @@ let g:lsp_diagnostics_virtual_text_enabled = 1
 let g:lsp_diagnostics_virtual_text_delay = 50
 let g:lsp_completion_documentation_delay = 40
 let g:lsp_document_highlight_delay = 100
-let g:lsp_diagnostics_virtual_text_prefix = "🍔 "
 let g:lsp_document_code_action_signs_delay = 100
 let g:lsp_fold_enabled = 0
 
