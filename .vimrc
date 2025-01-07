@@ -86,7 +86,9 @@ let g:which_key_map['d'] = {
 	\ 'D' : [':LspDeclaration', 'Go to declaration'],
 	\ 'd' : [':LspDefinition', 'Go to definition'],
 	\ 'r' : [':LspReferences', 'Go to references'],
-	\ 'f' : [':LspDocumentFormat', 'Format entire document']
+	\ 'h' : [':LspHover', 'Hover expression'],
+	\ 'f' : [':LspDocumentFormat', 'Format entire document'],
+  \ 's' : [':LspDocumentDiagnostics', 'Show diagnostics'],
 	\ }
 
 let g:which_key_map['f'] = {
@@ -99,8 +101,7 @@ let g:lsp_diagnostics_echo_delay = 50
 let g:lsp_diagnostics_highlights_enabled = 1
 let g:lsp_diagnostics_highlights_delay = 50
 let g:lsp_diagnostics_highlights_insert_mode_enabled = 0
-let g:lsp_diagnostics_signs_enabled = 1
-let g:lsp_diagnostics_signs_delay = 50
+let g:lsp_diagnostics_signs_enabled = 0
 let g:lsp_diagnostics_signs_insert_mode_enabled = 0
 let g:lsp_diagnostics_virtual_text_enabled = 1
 let g:lsp_diagnostics_virtual_text_delay = 50
