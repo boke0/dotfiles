@@ -20,6 +20,10 @@ set noundofile
 set autoindent
 set smartindent
 set smarttab
+set nowrap
+set list
+set autoread
+set listchars=tab:>-,trail:-,eol:$,extends:#,precedes:#,nbsp:%
 
 if !has('gui_running')
 	set t_Co=256
