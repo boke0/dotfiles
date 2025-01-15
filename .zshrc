@@ -26,6 +26,7 @@ eval "$(starship init zsh)"
 zinit ice depth=1
 zinit light zsh-users/zsh-autosuggestions
 zinit light asdf-vm/asdf
+zinit pack for fzf
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
@@ -109,3 +110,7 @@ if [ -f '/home/boke0/google-cloud-sdk/path.zsh.inc' ]; then . '/home/boke0/googl
 if [ -f '/home/boke0/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/boke0/google-cloud-sdk/completion.zsh.inc'; fi
 
 if [ -f $HOME/.zshrc.local ]; then source ~/.zshrc.local; fi
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/taigen.takeshita/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

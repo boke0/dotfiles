@@ -75,6 +75,8 @@ Plug 'github/copilot.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'elixir-editors/vim-elixir'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -82,6 +84,9 @@ let mapleader = "\<Space>"
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>u <c-r><CR>
+
+
+"vim-fzfをripgrepと連携させるコード
 
 let g:which_key_map = {}
 
@@ -98,6 +103,8 @@ let g:which_key_map['d'] = {
 let g:which_key_map['f'] = {
 	\ 'name' : '+find',
 	\ 'f' : [':Fern %:h', 'Open finder'],
+	\ 'z' : [':Files', 'Open FZF'],
+	\ 'r' : [':RG', 'Open FZF+RipGrep'],
 	\ }
 
 let g:lsp_diagnostics_echo_cursor = 1
