@@ -84,7 +84,7 @@ let mapleader = "\<Space>"
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>u <c-r><CR>
-
+nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
 "vim-fzfをripgrepと連携させるコード
 
