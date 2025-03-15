@@ -32,8 +32,8 @@ autoload -Uz compinit && compinit
 
 ## aliases
 
-alias vi="vim"
-alias vim="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias g="git"
 alias tmux="tmux -u"
 alias cfg="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
