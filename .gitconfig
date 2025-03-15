@@ -1,37 +1,54 @@
 [include]
-	path = .gitconfig.user
+  path = .gitconfig.user
 
 [pull]
-	rebase = false
+  rebase = false
+
+[push]
+  autoSetupRemote = true
+  default = simple
+  followTags = true
+
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+
 [init]
-	defaultBranch = master
+  defaultBranch = master
 
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore.global
+  editor = vim
+  excludesfile = ~/.gitignore.global
 
 [alias]
-	gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
-	ss = status
-	sst = status -uno
-	br = branch
-	brm = branch -m
-	co = checkout
-	cob = checkout -b
-	ad = add
-	adu = add -u .
-	mg = merge
-	mgff = merge --ff
-	cp = cherry-pick
-	cm = commit
-	icm = commit -m [init]
-	difff = diff --word-diff
-	ps = push
-	pso = push -u origin
-	pl = pull
-	plo = pull origin --recurse-submodules
+  gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+  ss = status
+  sst = status -uno
+  br = branch
+  brm = branch -m
+  co = checkout
+  cob = checkout -b
+  ad = add
+  adu = add -u .
+  mg = merge
+  mgff = merge --ff
+  cp = cherry-pick
+  cm = commit
+  icm = commit -m [init]
+  difff = diff --word-diff
+  ps = push
+  pso = push -u origin
+  pl = pull
+  plo = pull origin --recurse-submodules
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
