@@ -10,18 +10,19 @@ return {
     require('mason').setup()
     require('mason-lspconfig').setup()
 
-    vim.g.lsp_diagnostics_echo_cursor = 1
-    vim.g.lsp_diagnostics_echo_delay = 50
-    vim.g.lsp_diagnostics_highlights_enabled = 1
-    vim.g.lsp_diagnostics_highlights_delay = 50
-    vim.g.lsp_diagnostics_highlights_insert_mode_enabled = 0
-    vim.g.lsp_diagnostics_signs_enabled = 1
-    vim.g.lsp_diagnostics_signs_insert_mode_enabled = 0
-    vim.g.lsp_diagnostics_virtual_text_enabled = 0
-    vim.g.lsp_diagnostics_virtual_text_delay = 50
-    vim.g.lsp_completion_documentation_delay = 40
-    vim.g.lsp_document_highlight_delay = 100
-    vim.g.lsp_document_code_action_signs_delay = 100
-    vim.g.lsp_fold_enabled = 0
+    require('mason-lspconfig').setup_handlers {
+      function(server_name)
+        require('lspconfig')[server_name].setup {}
+      end
+    }
+
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      update_in_insert = false,
+      virtual_text = {
+        format = function(diagnostic)
+          return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
+        end,
+      },
+    })
   end
 }
