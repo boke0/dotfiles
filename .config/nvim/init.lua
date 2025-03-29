@@ -33,10 +33,6 @@ if not vim.fn.has('gui_running') then
   vim.o.t_Co = 256
 end
 
-if vim.fn.has('mac') then
-  vim.o.clipboard = vim.o.clipboard .. "unnamed"
-end
-
 vim.api.nvim_set_keymap('n', 'sh', '<C-w>h', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sj', '<C-w>j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'sk', '<C-w>k', { noremap = true, silent = true })
