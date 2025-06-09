@@ -98,6 +98,23 @@ deh() {
     tmux rename-window "$1"
 }
 
+dec() {
+    if [ $# != 0 ]; then
+        cd "$1"
+    fi
+    tmux split-window -v -l 50%
+    tmux split-window -h -l 75%
+    tmux split-window -h -l 66%
+    tmux split-window -h -l 50%
+    tmux select-pane -D
+    tmux split-window -h -l 75%
+    tmux split-window -h -l 66%
+    tmux split-window -h -l 50%
+    clear-panes
+    
+    tmux rename-window "$1"
+}
+
 if [ -f ~/.zprofile ]; then
     source ~/.zprofile
 fi

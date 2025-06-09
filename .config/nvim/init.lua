@@ -24,6 +24,7 @@ vim.o.wrap = false
 vim.o.list = true
 vim.o.autoread = true
 vim.o.expandtab = true
+vim.o.virtualedit = "onemore"
 vim.o.listchars = "tab:>-,trail:-,eol:$,extends:#,precedes:#,nbsp:%"
 vim.o.clipboard = "unnamedplus"
 
