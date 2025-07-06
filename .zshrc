@@ -102,7 +102,7 @@ dec() {
     if [ $# != 0 ]; then
         cd "$1"
     fi
-    tmux split-window -v -l 50%
+    tmux split-window -v -l 30%
     tmux split-window -h -l 75%
     tmux split-window -h -l 66%
     tmux split-window -h -l 50%
@@ -113,6 +113,30 @@ dec() {
     clear-panes
     
     tmux rename-window "$1"
+    send-pane 0 claude && sleep 1 && \
+    send-pane 1 claude && sleep 1 && \
+    send-pane 2 claude && sleep 1 && \
+    send-pane 3 claude
+}
+
+check-pane-id() {
+  tmux list-panes -t $(which-window) -F "#{pane_index}:#{pane_id}" | awk -F: -v idx="$1" '$1 == idx { print $2 }'
+}
+
+send-pane() {
+  tmux send-keys -t $(check-pane-id $1) "$2" && sleep 0.1 && tmux send-keys -t $(check-pane-id $1) Enter && wait
+}
+
+which-window() {
+  tmux display-message -t "$TMUX_PANE" -p '#{session_name}:#{window_index}'
+}
+
+which-pane() {
+  tmux display -t $(which-window) -p "#{pane_index}"
+}
+
+capture-pane() {
+  tmux capture-pane -t $(check-pane-id $1) -p | tail -40
 }
 
 if [ -f ~/.zprofile ]; then
