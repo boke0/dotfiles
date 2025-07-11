@@ -132,7 +132,7 @@ which-window() {
 }
 
 which-pane() {
-  tmux display -t $(which-window) -p "#{pane_index}"
+  tmux display -t "$TMUX_PANE" -p "#{pane_index}"
 }
 
 capture-pane() {
@@ -163,3 +163,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
