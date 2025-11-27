@@ -27,7 +27,7 @@ if ! which mise > /dev/null 2>&1; then
 	curl https://mise.run/zsh | sh
 fi
 
-eval "$(/home/boke0/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+eval "$($HOME/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
 
 export PATH="$PATH:/opt/nvim"
 
