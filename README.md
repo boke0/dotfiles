@@ -12,20 +12,20 @@ Boke0's dotfiles.
 ## Installation
 
 ```
-$ git clone --bare git@github.com:boke0/dotfiles.git $HOME/.dotfiles
-$ git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout installed
-$ source ~/.zshrc
+git clone --bare git@github.com:boke0/dotfiles.git $HOME/.dotfiles
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout installed
+source ~/.zshrc
 ```
 
 ## Uninstallation 
 
 ```
-$ cfg checkout master
+cfg checkout master
 ```
 
 
 ## Re-installation
 
 ```
-$ cfg checkout installed 
+cfg checkout installed 
 ```
