@@ -12,26 +12,6 @@ return {
       require('mason').setup()
       require('mason-lspconfig').setup()
 
-      require('mason-lspconfig').setup_handlers {
-        function(server_name)
-          require('lspconfig')[server_name].setup {}
-        end,
-        ['eslint'] = function()
-          require('lspconfig').eslint.setup {
-            on_attach = function(client, bufnr)
-              vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = bufnr,
-                command = "EslintFixAll",
-              })
-            end,
-            settings = {
-              workingDirectory = { mode = 'auto' },
-              useESLintClass = true,
-            },
-          }
-        end,
-      }
-
       vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         update_in_insert = false,
         virtual_text = {
