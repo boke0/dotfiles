@@ -7,14 +7,10 @@ return {
       'nvimtools/none-ls.nvim',
       'jay-babu/mason-null-ls.nvim',
     },
-    config = function()
-      require('mason').setup()
-      require('mason-lspconfig').setup_handlers({
-				function(server_name)
-					vim.lsp.enable({ server_name })
-				end
-			})
-    end
+		config = function()
+			require('mason').setup()
+			require('mason-lspconfig').setup()
+		end
   },
   {
     "hrsh7th/nvim-cmp",
