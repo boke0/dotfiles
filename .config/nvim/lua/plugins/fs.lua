@@ -32,7 +32,9 @@ return {
       'junegunn/fzf.vim',
     },
     config = function()
-      vim.fn['fzf#install']()
+			if vim.fn.exists('fzf#run') == 0 then
+				vim.fn['fzf#install']()
+			end
     end
   },
 }
