@@ -52,3 +52,6 @@
   autocorrect = prompt
 [commit]
   verbose = true
+[user]
+	name = =
+	email = =
