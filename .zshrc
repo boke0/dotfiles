@@ -29,7 +29,7 @@ fi
 
 eval "$($HOME/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
 
-export PATH="$PATH:/opt/nvim"
+export PATH="$PATH:/opt/nvim:$HOME/bin"
 
 ## install direnv
 
@@ -41,6 +41,11 @@ eval "$(direnv hook zsh)"
 ## install tpm(tmux)
 
 [ ! -d $HOME/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+
+## install waza
+if ! type waza > /dev/null; then
+  curl -fsSL https://raw.githubusercontent.com/microsoft/waza/main/install.sh | zsh
+fi
 
 ## functions
 
@@ -54,25 +59,33 @@ dev() {
     if [ $# != 0 ]; then
         cd "$1"
     fi
-    tmux split-window -h -l 24%
+    
+    # 引数があればそれを、なければホームからの相対パス（~形式）を取得
+    local win_name="${1:-${PWD/#$HOME/~}}"
+
+    tmux split-window -h -l 30%
     tmux split-window -v -l 75%
     tmux split-window -v -l 66%
     tmux split-window -v -l 50%
     tmux select-pane -L
     clear-panes
     
-    tmux rename-window "$1"
+    tmux rename-window "$win_name"
 }
 
 deh() {
     if [ $# != 0 ]; then
         cd "$1"
     fi
+    
+    # 引数があればそれを、なければホームからの相対パス（~形式）を取得
+    local win_name="${1:-${PWD/#$HOME/~}}"
+
     tmux split-window -v -l 30%
     tmux split-window -h -l 66%
     tmux split-window -h -l 50%
     tmux select-pane -L
     clear-panes
     
-    tmux rename-window "$1"
+    tmux rename-window "$win_name"
 }

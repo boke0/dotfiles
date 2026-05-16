@@ -1,13 +1,10 @@
 return {
 	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
+		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme kanagawa]])
-			vim.g.lightline = {
-				colorscheme = 'kanagawa'
-			}
+			vim.o.background = 'dark'
+			vim.cmd([[colorscheme gruvbox]])
 		end
-	},
+	}
 }
