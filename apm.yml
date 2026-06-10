@@ -1,0 +1,27 @@
+name: boke0
+version: 1.0.0
+description: APM project for boke0
+author: '='
+targets:
+- claude
+- codex
+dependencies:
+  mcp:
+  - microsoft/playwright-mcp
+  - name: ios-simulator
+    registry: false
+    transport: stdio
+    command: npx
+    args:
+    - -y
+    - ios-simulator-mcp
+  - name: XcodeBuildMCP
+    registry: false
+    transport: stdio
+    command: npx
+    args:
+    - -y
+    - xcodebuildmcp@latest
+    - mcp
+includes: auto
+scripts: {}

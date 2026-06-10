@@ -2,3 +2,7 @@
 .git-credentials
 .config
 .dotfiles
+
+
+# APM dependencies
+apm_modules/
